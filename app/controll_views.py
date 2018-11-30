@@ -100,6 +100,7 @@ class MyAppendView(MyBaseView):
 
 admin = Admin(app, name=u'病历管理系统', index_view=MyAdminIndexView(), base_template='my_master.html')
 # 添加页面
+
 admin.add_view(MyUserView(User, db.session, name=u'用户管理', category='系统'))
 admin.add_view(MyBasefileView(Basefile, db.session, name='基础档案表设置', category='系统'))
 

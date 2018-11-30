@@ -29,9 +29,9 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     login = fields.StringField(label='登录账号', validators=[validators.required()])
-    email = fields.StringField(label='邮箱')
+    username = fields.StringField(label='用户名')
     password = fields.PasswordField(label='密码', validators=[validators.required()])
 
     def validate_login(self, field):
         if db.session.query(User).filter_by(login=self.login.data).count() > 0:
-            raise validators.ValidationError('Duplicate username')
+            raise validators.ValidationError('登陆账号冲突')

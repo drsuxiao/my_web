@@ -1,7 +1,10 @@
-from flask_admin.contrib.sqla import ModelView
+from flask_admin.contrib.sqla import ModelView, ajax
 from flask_login import current_user
 from app.data_models import User
 from flask_admin import BaseView
+from app import db
+from flask import redirect, url_for
+
 
 
 class MyBaseView(BaseView):
@@ -14,10 +17,12 @@ class BaseModelView(ModelView):
     """ 模型视图基类 """
     def is_accessible(self):
         return current_user.is_authenticated
+
     page_size = 10  # 每页显示几条
     column_display_pk = True   #在页面中是否显示主键
     can_create = True   # 可以创建数据  False
-    can_view_details = True   # 可以查看详情  False
+    can_edit = True  # 可以创建数据  False
+    can_view_details = False   # 可以查看详情  False
     can_export = True
     details_modal = False    # 查看详细时是否弹出对话框
     edit_modal = False  #  编辑时是否弹出对话框
@@ -31,6 +36,8 @@ class BaseModelView(ModelView):
 
 
 class MyUserView(BaseModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'admin'
     """具体的模型视图"""
     can_export = False  # 可以创建数据  False
     column_searchable_list = ['id', 'username', 'login', 'create_time']   # 可以搜索的列名
@@ -45,12 +52,17 @@ class MyUserView(BaseModelView):
         'login': u'登录账号',
         'create_time': u'创建时间'
     }
-    form_args = {'username': {'render_kw': {"multiple": "multiple"}}}
-    form_choices = {'username': [(n.username, n.username) for n in User.query.all()]}
-    create_template = 'my_user_create.html'
+    # 从创建和编辑表单中删除字段
+    #form_excluded_columns = ['email']
+    # form_args = {'username': {'render_kw': {"multiple": "multiple"}}}
+    # form_choices = {'username': [(n.username, n.username) for n in User.query.all()]}
+    # create_template = 'my_user_create.html'
+
 
 
 class MyBasefileView(BaseModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'admin'
     """具体的模型视图"""
     column_searchable_list = ['id',
                               'type_name',
