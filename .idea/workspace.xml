@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060637ad-a2ce-459b-86ed-09fe6f8cabe6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/db_create.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_downgrade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_migrate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_upgrade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controll_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controll_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_amniotic_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_amniotic_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_append.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_append.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_user_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_user_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sqlite3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_amniotic_append.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_amniotic_append.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ptq5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ptq5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_create.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_downgrade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_migrate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_upgrade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/id_rsa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/id_rsa.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptq5.py" beforeDir="false" afterPath="$PROJECT_DIR$/importdata.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,10 +27,66 @@
       <file leaf-file-name="controll_views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controll_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+            <state relative-caret-position="165">
+              <caret line="92" column="63" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="63" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
+                <element signature="e#1304#3154#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_amniotic_append.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/my_amniotic_append.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#12;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#13;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#15;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#16;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#17;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#18;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#19;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#20;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#21;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#22;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#23;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#24;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#25;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#26;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#27;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#28;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#29;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#30;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#31;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/data_models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="69" selection-start-line="69" selection-end-line="234" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,8 +95,8 @@
       <file leaf-file-name="view_models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="172" column="4" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
+            <state relative-caret-position="572">
+              <caret line="176" column="40" lean-forward="true" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -53,91 +104,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ptq5.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptq5.py">
+      <file leaf-file-name="view_forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view_forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="383">
+              <caret line="39" column="18" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="18" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_upgrade.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_upgrade.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-              <folding>
-                <element signature="e#46#80#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_create.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_create.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_downgrade.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_downgrade.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="42" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="42" />
-              <folding>
-                <element signature="e#51#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/data_models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2079">
-              <caret line="76" column="62" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#37#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,6 +125,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>a_b</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -172,28 +150,29 @@
         <option value="$PROJECT_DIR$/app/templates/admin/admin/model/create.html" />
         <option value="$PROJECT_DIR$/app/templates/admin/model/create.html" />
         <option value="$PROJECT_DIR$/app/templates/my_create.html" />
-        <option value="$PROJECT_DIR$/app/templates/my_amniotic_append.html" />
         <option value="$PROJECT_DIR$/../flask_admin/venv/Lib/site-packages/flask_admin/contrib/sqla/ajax.py" />
         <option value="$PROJECT_DIR$/app/templates/my_append.html" />
         <option value="$PROJECT_DIR$/app/templates/admin/index.html" />
-        <option value="$PROJECT_DIR$/app/view_forms.py" />
         <option value="$PROJECT_DIR$/app/templates/my_user_create.html" />
         <option value="$PROJECT_DIR$/app/templates/my_amniotic_create.html" />
         <option value="$PROJECT_DIR$/ptq5.py" />
-        <option value="$PROJECT_DIR$/app/controll_views.py" />
         <option value="$PROJECT_DIR$/app/view_models.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/db_create.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/manager.py" />
         <option value="$PROJECT_DIR$/app/data_models.py" />
+        <option value="$PROJECT_DIR$/app/view_forms.py" />
+        <option value="$PROJECT_DIR$/app/controll_views.py" />
+        <option value="$PROJECT_DIR$/app/templates/my_amniotic_append.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="1923" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="259" />
+    <option name="y" value="159" />
+    <option name="width" value="1639" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -207,6 +186,17 @@
             <path>
               <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -275,7 +265,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ptq5.py" />
+      <option name="SCRIPT_NAME" value="G:\myproject\git\my_web\importdata.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -347,11 +337,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17291667" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33829787" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13723405" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -372,7 +363,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -413,20 +404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1294">
           <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sqlite3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -483,13 +460,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/a.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/my_append.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/admin/admin/layout.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -617,69 +587,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/my_amniotic_append.html">
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="243">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/my_amniotic_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view_forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#37#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controll_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="172" column="4" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptq5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_downgrade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="42" />
-          <folding>
-            <element signature="e#51#85#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -691,29 +604,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_upgrade.py">
+    <entry file="file://$PROJECT_DIR$/db_downgrade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="108">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="42" />
           <folding>
-            <element signature="e#46#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#51#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -728,12 +624,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db_create.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_upgrade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="e#46#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sqlite3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/importdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/my_append.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/my_amniotic_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="176" column="40" lean-forward="true" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/data_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2079">
-          <caret line="76" column="62" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
+        <state relative-caret-position="297">
+          <caret line="69" selection-start-line="69" selection-end-line="234" selection-end-column="42" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view_forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="18" />
+          <folding>
+            <element signature="e#37#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controll_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="92" column="63" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#1304#3154#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/my_amniotic_append.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#12;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#13;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#15;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#16;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#17;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#18;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#19;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#20;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#21;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#22;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#23;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#24;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#25;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#26;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#27;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#28;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#29;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#30;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#31;n#div#0;n#form#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

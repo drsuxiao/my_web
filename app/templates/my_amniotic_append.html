@@ -1,5 +1,253 @@
 {% extends 'my_append.html' %}
 {% block content %}
-<textarea id="txtCon" rows="10" cols="10" >content</textarea>
-<input name="" type="text" style="width:20px; height:20px;" />
+<form action="" method="post" name="new_form">
+    <div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            ID号{{form.id_no(style="height:20px;width:200px")}}
+            科别{{form.department(style="height:20px;width:150px")}}
+            床号{{form.bed_no(style="height:20px;width:50px")}}
+            住院号{{form.hospital_no(style="height:20px;width:100px")}}
+            编号{{form.record_no(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            孕妇姓名{{form.wife_name(style="height:20px;width:80px")}}
+            出生{{form.wife_birthday_year(style="height:20px;width:40px")}}年
+            {{form.wife_birthday_month(style="height:20px;width:20px")}}月
+            年龄{{form.wife_age(style="height:20px;width:30px")}}
+            籍贯{{form.wife_origin(style="height:20px;width:100px")}}
+            民族{{form.wife_nation(style="height:20px;width:60px")}}
+            职业{{form.wife_profession(style="height:20px;width:100px")}}
+            手机{{form.wife_phone(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            丈夫姓名{{form.husband_name(style="height:20px;width:80px")}}
+            出生{{form.husband_birthday_year(style="height:20px;width:40px")}}年
+            {{form.husband_birthday_month(style="height:20px;width:20px")}}月
+            年龄{{form.husband_age(style="height:20px;width:30px")}}
+            籍贯{{form.husband_origin(style="height:20px;width:100px")}}
+            民族{{form.husband_nation(style="height:20px;width:60px")}}
+            职业{{form.husband_profession(style="height:20px;width:100px")}}
+            手机{{form.husband_phone(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            通讯地址{{form.communication_address(style="height:20px;width:300px")}}
+            住宅电话{{form.residential_telephone(style="height:20px;width:100px")}}
+            PAPPA{{form.pappa_miu_ml(style="height:20px;width:30px")}}mIu{{form.pappa_mo(style="height:20px;width:30px")}}Mo
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            转诊{{form.referral_status(style="height:20px;width:57px")}}
+            转诊医院{{form.referral_hospital(style="height:20px;width:100px")}}
+            孕周{{form.pregnancy_week(style="height:20px;width:20px")}}周{{form.pregnancy_day(style="height:20px;width:20px")}}天
+            早孕β-HCG{{form.early_pregnancy_b_hcg_ng_l(style="height:20px;width:30px")}}ng/ml{{form.early_pregnancy_b_hcg_mo(style="height:20px;width:30px")}}Mo
+            β-HCG{{form.b_hcg_od(style="height:20px;width:30px")}}gn/ml {{form.b_hcg_mo(style="height:20px;width:30px")}}Mo
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            双方地贫{{form.ifpoverty(style="height:20px;width:30px")}}
+            筛查日期{{form.screen_date(style="height:20px;width:100px")}}
+            AFP{{form.afp_od(style="height:20px;width:30px")}}u/ml {{form.afp_mo(style="height:20px;width:30px")}}Mo
+            E3{{form.e3_nmol_1(style="height:20px;width:30px")}}nmol/l {{form.e3_mo(style="height:20px;width:30px")}}Mo
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            21三体风险：1/{{form.tribody_risk_21(style="height:20px;width:80px")}}
+            18三体风险：1/{{form.tribody_risk_18(style="height:20px;width:80px")}}
+            13三体风险：1/{{form.tribody_risk_13(style="height:20px;width:80px")}}
+            ONTD风险：1/{{form.ontd_risk(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td></td><td>日期</td><td>医院</td><td>地贫基因检测</td>
+                <td>WBC</td><td>MCV</td><td>MCH</td><td>Hb</td><td>BG</td><td>RH</td>
+                <td>  </td>
+                <td>Hb电泳%</td><td>其他</td>
+            </tr>
+            <tr>
+            <td nowrap="nowrap"  width="30px">孕妇</td>
+            <td width="100px">{{form.check_date(style="height:20px;width:100px")}}</td>
+            <td width="100px">{{form.check_hospital(style="height:20px;width:100px")}}</td>
+            <td width="100px">{{form.gene_detection_poverty(style="height:20px;width:100px")}}</td>
+            <td width="30px">{{form.wbc(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.mcv(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.mch(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.hb(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.bg(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.rh(style="height:20px;width:30px")}}</td>
+            <td width="10px">A2</td><td  width="80px">{{form.hb_elect_a2(style="height:20px;width:80px")}}</td>
+            <td  width="40px">{{form.hb_elect_other(style="height:20px;width:40px")}}</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"  width="30px">丈夫</td>
+            <td width="100px">{{form.husband_check_date(style="height:20px;width:100px")}}</td>
+            <td width="100px">{{form.husband_check_hospital(style="height:20px;width:100px")}}</td>
+            <td width="100px">{{form.husband_gene_detection_poverty(style="height:20px;width:100px")}}</td>
+            <td  width="30px">{{form.husband_wbc(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.husband_mcv(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.husband_mch(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.husband_hb(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.husband_bg(style="height:20px;width:30px")}}</td>
+            <td width="30px">{{form.husband_rh(style="height:20px;width:30px")}}</td>
+            <td width="10px">A2</td><td  width="80px">{{form.husband_hb_elect_a2(style="height:20px;width:80px")}}</td>
+            <td  width="40px">{{form.husband_hb_elect_other(style="height:20px;width:40px")}}</td>
+        </tr></table></div>
+        <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0"><tr>
+            <td width="100px" nowrap="nowrap">日期</td>
+            <td width="100px" nowrap="nowrap">检查医院</td>
+            <td width="20px" nowrap="nowrap">停经</td><td></td>
+            <td width="20px" nowrap="nowrap"> </td><td></td>
+            <td width="20px" nowrap="nowrap">孕周</td><td></td>
+            <td width="20px" nowrap="nowrap"> </td><td></td>
+            <td width="30px" nowrap="nowrap">BPD</td>
+            <td width="30px" nowrap="nowrap">头围</td>
+            <td width="30px" nowrap="nowrap">腹围</td>
+            <td width="30px" nowrap="nowrap">股骨</td>
+            <td width="30px" nowrap="nowrap">肱骨</td>
+            <td width="60px" nowrap="nowrap">羊水指数</td>
+            <td width="60px" nowrap="nowrap">羊水暗区</td>
+            <td width="30px" nowrap="nowrap">A/B</td>
+            <td width="30px" nowrap="nowrap">胎盘厚</td>
+            <td width="30px" nowrap="nowrap">位置</td>
+            <td width="30px" nowrap="nowrap">NF</td>
+            <td width="30px" nowrap="nowrap">鼻骨</td>
+            <td width="30px" nowrap="nowrap">心胸比</td>
+        </tr>
+        <tr>
+            <td width="100px" nowrap="nowrap">{{form.b_check_date(style="height:20px;width:100px")}}</td>
+            <td width="100px" nowrap="nowrap">{{form.b_check_hospital(style="height:20px;width:100px")}}</td>
+            <td width="20px" nowrap="nowrap">{{form.menolipsis_week(style="height:20px;width:20px")}}</td><td>周</td>
+            <td width="20px" nowrap="nowrap">{{form.menolipsis_day(style="height:20px;width:20px")}}</td><td>天</td>
+            <td width="20px" nowrap="nowrap">{{form.b_pregnancy_week(style="height:20px;width:20px")}}</td><td>周</td>
+            <td width="20px" nowrap="nowrap">{{form.b_pregnancy_day(style="height:20px;width:20px")}}</td><td>天</td>
+            <td width="30px" nowrap="nowrap">{{form.bpd(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.head_circumference(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.ventral_circumference(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.femur(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.humerus(style="height:20px;width:30px")}}</td>
+            <td width="60px" nowrap="nowrap">{{form.fi(style="height:20px;width:60px")}}</td>
+            <td width="60px" nowrap="nowrap">{{form.av(style="height:20px;width:60px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.a_b(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.placenta_thickness(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.placenta_position(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.nf(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.nasal_bone(style="height:20px;width:30px")}}</td>
+            <td width="30px" nowrap="nowrap">{{form.ctr(style="height:20px;width:30px")}}</td>
+        </tr></table></div>
+
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            B超描述<td style="white-space:nowrap" colspan="10">{{form.b_check_description(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            病史：LMP{{form.lmp(style="height:20px;width:100px")}}（纠正后）
+            孕早期({{form.early_pregnancy(style="height:20px;width:100px")}})
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            异常描述{{form.exception_description(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            传染病等检查{{form.infection_check(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            <td style="white-space:nowrap" colspan="5">平素月经{{form.menses_ifrule(style="height:20px;width:100px")}}规则，{{form.menses_days(style="height:20px;width:100px")}}/{{form.menses_cycle(style="height:20px;width:100px")}}。G{{form.g(style="height:20px;width:100px")}}P{{form.p(style="height:20px;width:100px")}}。
+            
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            过去史、家族史{{form.past_family_history(style="height:20px;width:100px")}}
+            孕产史{{form.maternity_history(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            诊断：<td style="white-space:nowrap" colspan="4">1.G{{form.diagnosis1_g(style="height:20px;width:100px")}}P{{form.diagnosis1_p(style="height:20px;width:100px")}}G{{form.diagnosis1_pregnancy_week(style="height:20px;width:100px")}}周{{form.diagnosis1_pregnancy_day(style="height:20px;width:100px")}}天 
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+                      2.{{form.diagnosis2(style="height:20px;width:100px")}}医生{{form.diagnostic_doctor(style="height:20px;width:100px")}}诊断日期{{form.diagnostic_date(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            体温{{form.temperature(style="height:20px;width:100px")}}℃
+            血压{{form.blood_pressure_systolic(style="height:20px;width:100px")}}/{{form.blood_pressure_diastolic(style="height:20px;width:100px")}}mmHg
+            脉搏{{form.pulse(style="height:20px;width:100px")}}次每分
+            手术孕周{{form.operation_pregnancy_week(style="height:20px;width:100px")}}周{{form.operation_pregnancy_day(style="height:20px;width:100px")}}天
+            拟手术日期{{form.plan_operation_date(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            羊膜腔穿刺术记录
+            雷注引产术{{form.ray_injection_induction(style="height:20px;width:100px")}}
+            宫内治疗{{form.intrauterine_treatment(style="height:20px;width:100px")}}
+            录入人{{form.entry_person(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            日期
+            次数
+            胎盘位置
+            经否胎盘
+            胎盘出血s
+            手术时间m
+            抽羊水量
+            羊水性质
+            术前胎心率
+            /
+            术后胎心率
+            操作者
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            {{form.operation_date(style="height:20px;width:100px")}}
+            {{form.times(style="height:20px;width:100px")}}
+            {{form.surgical_placenta_location(style="height:20px;width:100px")}}
+            {{form.through_the_placenta(style="height:20px;width:100px")}}
+            {{form.placental_hemorrhage(style="height:20px;width:100px")}}
+            {{form.operation_time(style="height:20px;width:100px")}}
+            {{form.extraction_sheep_water(style="height:20px;width:100px")}}
+            {{form.amniotic_fluid_properties(style="height:20px;width:100px")}}
+            {{form.preoperative_heart_rate(style="height:20px;width:100px")}}
+            /
+            {{form.postoperative_heart_rate(style="height:20px;width:100px")}}
+            {{form.operator(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            特殊记录{{form.special_records(style="height:20px;width:100px")}}
+            送检人{{form.sending_person(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            染色体报告日期:{{form.chromosome_reporting_date(style="height:20px;width:100px")}}
+            AFP
+            地贫基因报告日期:{{form.chromosome_reporting_date(style="height:20px;width:100px")}}
+            CMV、TOX-DNA
+            其他检查
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            项目{{form.chromosome_project(style="height:20px;width:100px")}}
+            {{form.afp_project(style="height:20px;width:100px")}}
+            {{form.poverty_gene_project(style="height:20px;width:100px")}}
+            {{form.dna_project(style="height:20px;width:100px")}}
+            {{form.other_check_project(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            结果{{form.chromosome(style="height:20px;width:100px")}}
+            {{form.afp(style="height:20px;width:100px")}}
+            {{form.poverty_gene(style="height:20px;width:100px")}}
+            {{form.cmv_tox_dna(style="height:20px;width:100px")}}
+            {{form.other_check(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            异常通知:
+            {{form.exception_notification_date(style="height:20px;width:100px")}}
+            {{form.exception_notification(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            随访：
+            日期{{form.follow_up_date(style="height:20px;width:100px")}}
+            分娩时间{{form.delivery_time(style="height:20px;width:100px")}}
+            分娩方式{{form.delivery_mode(style="height:20px;width:100px")}}
+            备注{{form.remarks(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            分娩医院{{form.delivery_hospital(style="height:20px;width:100px")}}
+            分娩孕周{{form.delivery_pregnancy_week(style="height:20px;width:100px")}}
+            性别{{form.sex(style="height:20px;width:100px")}}
+            体重{{form.weight(style="height:20px;width:100px")}}g
+            身长{{form.length(style="height:20px;width:100px")}}cm
+            新生儿情况{{form.neonatal_condition(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+        <div style="text-align:left"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+            其他描述{{form.other_description(style="height:20px;width:100px")}}
+            失访{{form.loss_follow_up(style="height:20px;width:100px")}}
+        </td></tr></table></div>
+    </div>
+</form>
 {% endblock content %}

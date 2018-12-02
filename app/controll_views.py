@@ -3,7 +3,7 @@ from flask_admin import Admin, helpers
 from app import app, db, login_manager
 from app.data_models import User, Basefile, Amnioticrecord, Finehairrecord, Umbilicalbloodrecord
 from flask_login import current_user, login_user, logout_user
-from app.view_forms import LoginForm, RegistrationForm
+from app.view_forms import LoginForm, RegistrationForm, AmnioticForm
 from flask import render_template, redirect, url_for, request
 from app.view_models import MyUserView, MyBasefileView, MyAmnioticrecordView, MyBaseView
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -89,7 +89,8 @@ class MyAppendView(MyBaseView):
 
     @expose('/')
     def index(self):
-        return self.render('my_amniotic_append.html')
+        form = AmnioticForm()
+        return self.render('my_amniotic_append.html', form=form)
 
 
 #使用自己重写的 Home view 来重置了库中原本提供的Home view
