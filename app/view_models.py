@@ -1,10 +1,26 @@
 from flask_admin.contrib.sqla import ModelView, ajax
 from flask_login import current_user
-from app.data_models import User
+from app.data_models import User, Basefile
 from flask_admin import BaseView
 from app import db
 from flask import redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import fields, validators, form
+from flask_admin import form
+from wtforms import fields
 
+class IDBrandForm(form.BaseForm):
+    id = fields.StringField()
+    abbreviation = fields.StringField()
+    company_name = fields.StringField()
+
+
+class UserForm(form.BaseForm):
+    id = fields.IntegerField()
+    login = fields.StringField(label='登录账号', validators=[validators.required()])
+    username = fields.StringField(label='用户名', validators=[validators.DataRequired("请输入用户名！")])
+    password = fields.PasswordField(label='密码', validators=[validators.required()])
+    create_time = fields.DateTimeField()
 
 
 class MyBaseView(BaseView):
@@ -18,12 +34,13 @@ class BaseModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
 
-    page_size = 10  # 每页显示几条
-    column_display_pk = True   #在页面中是否显示主键
-    can_create = True   # 可以创建数据  False
+    page_size = 200  # 每页显示几条
+    column_display_pk = False   #在页面中是否显示主键
+    can_create = False   # 可以创建数据  False
     can_edit = True  # 可以创建数据  False
     can_view_details = False   # 可以查看详情  False
     can_export = True
+    can_delete = False
     details_modal = False    # 查看详细时是否弹出对话框
     edit_modal = False  #  编辑时是否弹出对话框
 
@@ -55,20 +72,24 @@ class MyUserView(BaseModelView):
     # 从创建和编辑表单中删除字段
     #form_excluded_columns = ['email']
     # form_args = {'username': {'render_kw': {"multiple": "multiple"}}}
-    # form_choices = {'username': [(n.username, n.username) for n in User.query.all()]}
-    # create_template = 'my_user_create.html'
-
+    #form_choices = {'username': [(n.username, n.username) for n in User.query.all()]}
+    #create_template = 'my_user_create.html'
+    can_create = True  # 可以创建数据  False
+    #form = UserForm
 
 
 class MyBasefileView(BaseModelView):
     def is_accessible(self):
         return current_user.is_authenticated and current_user.username == 'admin'
     """具体的模型视图"""
+    can_create = True
+    can_delete = False
     column_searchable_list = ['id',
                               'type_name',
                               'plan_code',
                               'field_name',
-                              'basefile_name'
+                              'basefile_name',
+                              'colid'
                               ]
     column_filters = column_searchable_list
     column_list = ['id',
@@ -85,7 +106,8 @@ class MyBasefileView(BaseModelView):
                               'show_width',
                               'ifvisibled']   # 填入想要显示的字段，不填的话自动从模型中取
     #column_exclude_list    填入不想显示的字段
-    column_editable_list = ['print_value',
+    column_editable_list = ['field_name','basefile_name',
+                              'print_value',
                               'default_value',
                               'list_order',
                               'sort_type',
@@ -109,8 +131,49 @@ class MyBasefileView(BaseModelView):
     }
 
 
+def get_field_name_list():
+    collist = []
+    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01',
+                                             Basefile.field_name != 'id').order_by(Basefile.colid).all()
+    for row in rows:
+        collist.append(row.field_name)
+    return collist
+
+
+def get_basefile_name_list():
+    collist = []
+    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01',
+                                             Basefile.field_name != 'id').order_by(Basefile.colid).all()
+    for row in rows:
+        collist.append(row.basefile_name)
+    return collist
+
+
+def get_label_dict():
+    field_list = get_field_name_list()
+    name_list = get_basefile_name_list()
+    mydict = {}
+    for i in range(len(field_list)):
+        key = field_list[i]
+        value = name_list[i]
+        dict = {key: value}
+        mydict.update(dict)
+    return mydict
+
+
 class MyAmnioticrecordView(BaseModelView):
     """具体的模型视图"""
+
+    can_create = True
+    can_edit = True
+    can_delete = True
     can_export = True  # 可以创建数据  False
-    create_template = 'my_amniotic_create.html'
-    column_labels = {'id': u'编号', 'records': u'病历册'}
+    #create_template = 'my_amniotic_create.html'
+    #edit_template = 'my_amniotic_create.html'
+    column_list = get_field_name_list()
+    column_labels = get_label_dict()
+    column_searchable_list = column_list
+    column_editable_list = column_list
+    column_searchable_list = column_list
+    column_filters = column_searchable_list
+    # form = IDBrandForm

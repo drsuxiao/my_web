@@ -50,12 +50,12 @@ class MyAdminIndexView(AdminIndexView):
         if helpers.validate_form_on_submit(form):
             user = form.get_user()
             login_user(user)
-
+            print(form.data)
         if current_user.is_authenticated:
             return redirect(url_for('.index'))
-        # link = '<p>Don\'t have an account? <a href="' + url_for('.register_view') + '">Click here to register.</a></p>'
+        link = '<p>Don\'t have an account? <a href="' + url_for('.register_view') + '">Click here to register.</a></p>'
         self._template_args['form'] = form
-        # self._template_args['link'] = link
+        self._template_args['link'] = link
         return super(MyAdminIndexView, self).index()
 
     @expose('/register/', methods=('GET', 'POST'))
@@ -74,9 +74,9 @@ class MyAdminIndexView(AdminIndexView):
 
             login_user(user)
             return redirect(url_for('.index'))
-        # link = '<p>Already have an account? <a href="' + url_for('.login_view') + '">Click here to log in.</a></p>'
+        link = '<p>Already have an account? <a href="' + url_for('.login_view') + '">Click here to log in.</a></p>'
         self._template_args['form'] = form
-        # self._template_args['link'] = link
+        self._template_args['link'] = link
         return super(MyAdminIndexView, self).index()
 
     @expose('/logout/')
@@ -109,8 +109,8 @@ admin.add_view(MyAppendView(name=u'绒毛录入', endpoint='fluff', category='�
 admin.add_view(MyAppendView(name=u'脐血录入', endpoint='cordblood', category='病历数据录入'))
 
 admin.add_view(MyAmnioticrecordView(Amnioticrecord, db.session, name='羊水病历', category='病历数据查询'))
-admin.add_view(MyAmnioticrecordView(Finehairrecord, db.session, name='绒毛病历', category='病历数据查询'))
-admin.add_view(MyAmnioticrecordView(Umbilicalbloodrecord, db.session, name='脐血病历', category='病历数据查询'))
+#admin.add_view(MyAmnioticrecordView(Finehairrecord, db.session, name='绒毛病历', category='病历数据查询'))
+#admin.add_view(MyAmnioticrecordView(Umbilicalbloodrecord, db.session, name='脐血病历', category='病历数据查询'))
 
 
 # admin.add_view(MyView(name=u'用户管理'))

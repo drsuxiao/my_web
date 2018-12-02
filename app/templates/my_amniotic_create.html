@@ -24,7 +24,6 @@
         <form method="POST" action="">
             {{ form.hidden_tag() if form.hidden_tag }}
             <table>
-                {{ form.records.label }}{{ form.records }}
             {% for f in form if f.type != 'CSRFTokenField' %}
                 <tr><td>{{ f.label }}</td><td>{{ f }}</td></tr>
             {% if f.errors %}
@@ -36,9 +35,11 @@
             {% endif %}
             {% endfor %}
             </table>
+
             <button class="btn" type="submit">提交</button>
         </form>
         {{ link | safe }}
+      {# {{ lib.render_form(form, return_url, extra(), form_opts) }} #}
   {% endblock %}
 {% endblock %}
 

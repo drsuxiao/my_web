@@ -1,59 +1,46 @@
-from PyQt5 import QtChart, QtCore, QtGui, QtPrintSupport, QtWidgets
-import sys
-import random
+import csv
+from app import db
+from app.data_models import Basefile
 
 
-class Window(QtWidgets.QWidget):
-    def __init__(self):
-        QtWidgets.QWidget.__init__(self)
-        self.setWindowTitle(self.tr('Chart Printing'))
-        self.chart = QtChart.QChart()
-        self.chart_view = QtChart.QChartView(self.chart)
-        self.chart_view.setRenderHint(QtGui.QPainter.Antialiasing)
-        self.buttonPreview = QtWidgets.QPushButton('Preview', self)
-        self.buttonPreview.clicked.connect(self.handle_preview)
-        self.buttonPrint = QtWidgets.QPushButton('Print', self)
-        self.buttonPrint.clicked.connect(self.handle_print)
-        layout = QtWidgets.QGridLayout(self)
-        layout.addWidget(self.chart_view, 0, 0, 1, 2)
-        layout.addWidget(self.buttonPreview, 1, 0)
-        layout.addWidget(self.buttonPrint, 1, 1)
-        self.create_chart()
+my_data = []
+with open('amoc.txt', 'r', encoding='utf-8') as csvfile:
+    csv_reader = csv.reader(csvfile)  # 使用csv.reader读取csvfile中的文件
+    my_header = next(csv_reader)  # 读取第一行每一列的标题
+    for row in csv_reader:  # 将csv 文件中的数据保存到birth_data中
+        my_data.append(row)
 
-    def create_chart(self):
-        self.chart.setTitle("Chart Print Preview and Print Example")
-        for i in range(5):
-            series = QtChart.QLineSeries()
-            series.setName("Line {}".format(i + 1))
-            series.append(0, 0)
-            for i in range(1, 10):
-                series.append(i, random.randint(1, 9))
-            series.append(10, 10)
-            self.chart.addSeries(series)
-        self.chart.createDefaultAxes()
+    print(my_data)
 
-    def handle_print(self):
-        printer = QtPrintSupport.QPrinter(QtPrintSupport.QPrinter.HighResolution)
-        dialog = QtPrintSupport.QPrintDialog(printer, self)
-        if dialog.exec_() == QtPrintSupport.QPrintDialog.Accepted:
-            self.handle_paint_request(printer)
-
-    def handle_preview(self):
-        dialog = QtPrintSupport.QPrintPreviewDialog()
-        dialog.paintRequested.connect(self.handle_paint_request)
-        dialog.exec_()
-
-    def handle_paint_request(self, printer):
-        painter = QtGui.QPainter(printer)
-        painter.setViewport(self.chart_view.rect())
-        painter.setWindow(self.chart_view.rect())
-        self.chart_view.render(painter)
-        painter.end()
-
-
-if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
-    window = Window()
-    window.resize(640, 480)
-    window.show()
-    sys.exit(app.exec_())
+db.session.query(Basefile).delete()
+for row in my_data:
+    type_name = row[1]
+    plan_code = row[2]
+    field_name = row[3]
+    basefile_name = row[4]
+    colid = row[5]
+    print_value = row[6]
+    default_value = row[7]
+    list_order = row[8]
+    sort_type = row[9]
+    sort_order = row[10]
+    show_width = row[11]
+    if row[12] == 'True':
+        ifvisibled = 1
+    else:
+        ifvisibled = 0
+    if colid == '':
+        colid = -1
+    if list_order == '':
+        list_order = -1
+    if sort_order == '':
+        sort_order = -1
+    if show_width == '':
+        show_width = -1
+    basefile = Basefile(type_name=type_name, plan_code=plan_code, field_name=field_name, basefile_name=basefile_name,
+                        colid=colid, print_value=print_value, default_value=default_value,
+                        list_order=list_order, sort_type=sort_type, sort_order=sort_order, show_width=show_width, ifvisibled=ifvisibled)
+    print(basefile)
+    db.session.add(basefile)
+db.session.commit()
+print(db.session.query(Basefile).count())

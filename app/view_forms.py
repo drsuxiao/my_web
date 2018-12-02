@@ -1,5 +1,5 @@
 #这里的fields和validators是用的Flask-WTForm
-from wtforms import fields, validators
+from wtforms import fields, validators, form
 from flask_wtf import FlaskForm
 from app import db
 from app.data_models import User
@@ -29,9 +29,10 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     login = fields.StringField(label='登录账号', validators=[validators.required()])
-    username = fields.StringField(label='用户名')
+    username = fields.StringField(label='用户名', validators=[validators.DataRequired("请输入用户名！")])
     password = fields.PasswordField(label='密码', validators=[validators.required()])
 
     def validate_login(self, field):
         if db.session.query(User).filter_by(login=self.login.data).count() > 0:
             raise validators.ValidationError('登陆账号冲突')
+

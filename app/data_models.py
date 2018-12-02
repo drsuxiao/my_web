@@ -68,13 +68,13 @@ class Amnioticrecord(db.Model):
     __tablename__ = 'amnioticrecord'
 
     id = db.Column(db.Integer, primary_key=True)
-    records = db.Column(db.String(30))
+    records = db.Column(db.String(30), nullable=False)
     record_no = db.Column(db.String(20), nullable=False)
     sort_no = db.Column(db.Integer)
-    wife_name = db.Column(db.String(30))
-    wife_age = db.Column(db.Integer)
-    wife_birthday_year = db.Column(db.Integer)
-    wife_birthday_month = db.Column(db.Integer)
+    wife_name = db.Column(db.String(30), nullable=False)
+    wife_age = db.Column(db.Integer, nullable=False)
+    wife_birthday_year = db.Column(db.Integer, nullable=False)
+    wife_birthday_month = db.Column(db.Integer, nullable=False)
     wife_origin = db.Column(db.String(30))
     wife_nation = db.Column(db.String(20))
     wife_profession = db.Column(db.String(30))
@@ -100,10 +100,8 @@ class Amnioticrecord(db.Model):
     b_hcg_od = db.Column(db.Float)
     b_hcg_mo = db.Column(db.Float)
     tribody_risk_21 = db.Column(db.Float)
-    tribody_risk_21 = db.Column(db.Float)
     tribody_risk_18 = db.Column(db.Float)
     tribody_risk_13 = db.Column(db.Float)
-    tribody_risk_21 = db.Column(db.Float)
     ontd_risk = db.Column(db.String(8))
     pappa_miu_ml = db.Column(db.Float)
     pappa_mo = db.Column(db.Float)
@@ -228,10 +226,11 @@ class Amnioticrecord(db.Model):
     result_printing_times = db.Column(db.Integer)  #结果打印次数
     e3_nmol_1 = db.Column(db.Float)  # E3_nmol/l
     e3_mo = db.Column(db.Float)  #E3_Mo
-    early_pregnancy_b_hcg_ng_1 = db.Column(db.Float)  # 早孕β-HCG_ng/l
+    early_pregnancy_b_hcg_ng_l = db.Column(db.Float)  # 早孕β-HCG_ng/l
     early_pregnancy_b_hcg_mo = db.Column(db.Float)  # 早孕β-HCG_Mo
     ctr = db.Column(db.Float)  # 心胸比
     exception_notification_person = db.Column(db.String(20))  # 异常通知人
     treatment_times = db.Column(db.Integer)  # 治疗次数
     id_number = db.Column(db.String(50))  #身份证号
+    id_no = db.Column(db.String(50))  #ID号
 
