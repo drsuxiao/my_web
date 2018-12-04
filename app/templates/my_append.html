@@ -2,9 +2,25 @@
 {% block body %}
 {{ super() }}
 <div>
-<a href="/admin/amniotic/">新增</a> | <a href="">编辑</a> | <a href="">刷新</a> | <a href="">首记录</a> | <a href="">上一个</a> | <a href="">下一个</a> | <a href="">末记录</a>
+<a href="/admin/amniotic/" onclick="mynew()">新增</a> | <a href="" onclick="b1()">编辑</a> | <a href="">刷新</a> | <a href="">首记录</a> | <a href="">上一个</a> | <a href="">下一个</a> | <a href="">末记录</a>
 </div>
 <hr>
 {% block content %}{% endblock content %}
-
+<script>
+    function mynew(){
+		// 通过getElementsByTagName来获取标签名的集合
+		var inputs = document.getElementsByTagName('input');
+		// 声明两个变量，为for循环做准备
+		var i =0 ,length = inputs.length;
+		// 通过for循环赋值
+		for (; i < length; i++) {
+			input = inputs[i];
+			// 判断input的类型是不是文本框
+			if (input.type === 'text') {
+				// 为文本框赋值，因为是从 0 开始赋值的，所以想从 1 开始的话就需要 i + 1
+				input.value = '';
+			}
+		}
+	}
+</script>
 {% endblock body %}

@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from app import db
 from app.data_models import User
 from werkzeug.security import generate_password_hash, check_password_hash
+from wtforms_sqlalchemy.fields import QuerySelectField
 
 
 # Define login and registration forms (for flask-login)
@@ -47,6 +48,13 @@ class PasswordEditForm(FlaskForm):
     
 
 class AmnioticForm(FlaskForm):
+
+    def query_factory_user():
+        return [r.username for r in db.session.query(User).all()]
+
+    def get_pk(obj):
+        return obj
+
     id = fields.IntegerField(label='ID') #db.Column(db.Integer, primary_key=True)
     records = fields.StringField(label='病历册', validators=[validators.DataRequired()])#db.Column(db.String(30), nullable=False)
     record_no = fields.StringField(label='病历号', validators=[validators.DataRequired()]) #db.Column(db.String(20), nullable=False)
@@ -197,7 +205,8 @@ class AmnioticForm(FlaskForm):
     neonatal_condition = fields.StringField()#db.Column(db.String(50))  # 新生儿情况
     loss_follow_up = fields.StringField()#db.Column(db.String(50))  # 失访
     other_description = fields.StringField()#db.Column(db.String(200))  # 其他描述
-    entry_person = fields.StringField()# db.Column(db.String(20))  # 录入人
+    entry_person = QuerySelectField(label=u'录入人', validators=[validators.required()], query_factory=query_factory_user,
+                                    get_pk=get_pk)# db.Column(db.String(20))  # 录入人
     modifier = fields.StringField()#db.Column(db.String(20))  # 修改人
     printing_times = fields.IntegerField()#db.Column(db.Integer) #打印次数
     sending_person = fields.StringField()#db.Column(db.String(10))  # 送检人

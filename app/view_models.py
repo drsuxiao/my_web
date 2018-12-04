@@ -8,11 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import fields, validators, form
 from flask_admin import form
 from wtforms import fields
-
-class IDBrandForm(form.BaseForm):
-    id = fields.StringField()
-    abbreviation = fields.StringField()
-    company_name = fields.StringField()
+from wtforms_sqlalchemy.fields import QuerySelectField
 
 
 class UserForm(form.BaseForm):

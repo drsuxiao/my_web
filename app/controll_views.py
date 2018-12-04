@@ -4,7 +4,7 @@ from app import app, db, login_manager
 from app.data_models import User, Basefile, Amnioticrecord, Finehairrecord, Umbilicalbloodrecord
 from flask_login import current_user, login_user, logout_user
 from app.view_forms import LoginForm, RegistrationForm, AmnioticForm, PasswordEditForm
-from flask import render_template, redirect, url_for, request, flash
+from flask import render_template, redirect, url_for, request, flash, json
 from app.view_models import MyUserView, MyBasefileView, MyAmnioticrecordView, MyBaseView
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -84,7 +84,7 @@ class MyAdminIndexView(AdminIndexView):
         logout_user()
         return redirect(url_for('.index'))
 
-    @expose('/admin/password/', methods=['GET', 'POST'])
+    @expose('/password/', methods=['GET', 'POST'])
     def password_edit(self):
         form = PasswordEditForm()
         if helpers.validate_form_on_submit(form):
@@ -99,12 +99,31 @@ class MyAdminIndexView(AdminIndexView):
             flash('原密码不正确')
         return self.render('/admin/my_password_edit.html', form=form)
 
+
 class MyAppendView(MyBaseView):
 
-    @expose('/')
+    @expose('/', methods=['GET', 'POST'])
     def index(self):
         form = AmnioticForm()
         return self.render('my_amniotic_append.html', form=form)
+
+    @expose('/new/', methods=['GET', 'POST'])
+    def amniotic_new(self):
+        form = AmnioticForm()
+        return self.render('my_amniotic_append.html', form=form)
+
+    @expose('/test_get/', methods=['POST', 'GET'])
+    def test_get(self):
+        # 获取Get数据
+        id = request.args.get('id')
+        # 返回
+        data = dict(Amnioticrecord.query.filter(id == id).first())
+        print(json.dumps(data))
+        if data:
+            return json.dumps({'result': 'ok'})
+        else:
+            return json.dumps({'result': 'error'})
+
 
 
 #使用自己重写的 Home view 来重置了库中原本提供的Home view
