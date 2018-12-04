@@ -168,7 +168,7 @@ class MyAmnioticrecordView(BaseModelView):
     can_edit = True
     can_delete = True
     can_export = True  # 可以创建数据  False
-    #create_template = 'my_amniotic_create.html'
+    create_template = 'my_amniotic_create.html'
     #edit_template = 'my_amniotic_create.html'
     column_list = get_field_name_list()
     column_labels = get_label_dict()

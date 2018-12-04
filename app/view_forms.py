@@ -37,12 +37,21 @@ class RegistrationForm(FlaskForm):
             raise validators.ValidationError('登陆账号冲突')
 
 
+class PasswordEditForm(FlaskForm):
+    old_password = fields.PasswordField('原密码', validators=[validators.DataRequired()])
+    password = fields.PasswordField('新密码', validators=[
+        validators.DataRequired(), validators.EqualTo('password2', message='两次密码不一致')])
+    # 表单中完成密码与确认密码一致性的验证
+    password2 = fields.PasswordField('确认密码', validators=[validators.DataRequired()])
+    submit = fields.SubmitField('更新密码')
+    
+
 class AmnioticForm(FlaskForm):
-    id = fields.IntegerField() #db.Column(db.Integer, primary_key=True)
-    records = fields.StringField()#db.Column(db.String(30), nullable=False)
-    record_no = fields.StringField() #db.Column(db.String(20), nullable=False)
-    sort_no = fields.IntegerField()#db.Column(db.Integer)
-    wife_name = fields.StringField()#db.Column(db.String(30), nullable=False)
+    id = fields.IntegerField(label='ID') #db.Column(db.Integer, primary_key=True)
+    records = fields.StringField(label='病历册', validators=[validators.DataRequired()])#db.Column(db.String(30), nullable=False)
+    record_no = fields.StringField(label='病历号', validators=[validators.DataRequired()]) #db.Column(db.String(20), nullable=False)
+    sort_no = fields.IntegerField(label='排序号')#db.Column(db.Integer)
+    wife_name = fields.StringField(label='孕妇', validators=[validators.DataRequired()])#db.Column(db.String(30), nullable=False)
     wife_age = fields.IntegerField()#db.Column(db.Integer, nullable=False)
     wife_birthday_year = fields.IntegerField()#db.Column(db.Integer, nullable=False)
     wife_birthday_month = fields.IntegerField()#db.Column(db.Integer, nullable=False)

@@ -3,8 +3,8 @@ from flask_admin import Admin, helpers
 from app import app, db, login_manager
 from app.data_models import User, Basefile, Amnioticrecord, Finehairrecord, Umbilicalbloodrecord
 from flask_login import current_user, login_user, logout_user
-from app.view_forms import LoginForm, RegistrationForm, AmnioticForm
-from flask import render_template, redirect, url_for, request
+from app.view_forms import LoginForm, RegistrationForm, AmnioticForm, PasswordEditForm
+from flask import render_template, redirect, url_for, request, flash
 from app.view_models import MyUserView, MyBasefileView, MyAmnioticrecordView, MyBaseView
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -84,6 +84,20 @@ class MyAdminIndexView(AdminIndexView):
         logout_user()
         return redirect(url_for('.index'))
 
+    @expose('/admin/password/', methods=['GET', 'POST'])
+    def password_edit(self):
+        form = PasswordEditForm()
+        if helpers.validate_form_on_submit(form):
+            user = db.session.query(User).filter(User.id == current_user.id).first()
+            old_password = form.old_password.data
+            if user.password == old_password:
+                user.password = form.password.data
+                db.session.add(user)
+                db.session.commit()
+                flash('修改密码成功')
+                return redirect(url_for('.index'))
+            flash('原密码不正确')
+        return self.render('/admin/my_password_edit.html', form=form)
 
 class MyAppendView(MyBaseView):
 
