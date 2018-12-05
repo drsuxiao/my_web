@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060637ad-a2ce-459b-86ed-09fe6f8cabe6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/js/jquery-3.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controll_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controll_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_amniotic_append.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_amniotic_append.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_amniotic_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_amniotic_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/my_append.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_append.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/view_models.py" afterDir="false" />
     </list>
@@ -24,8 +19,8 @@
       <file leaf-file-name="controll_views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controll_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="120" column="31" lean-forward="true" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+            <state relative-caret-position="405">
+              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -182,12 +177,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>a_b</find>
-      <find />
+      <find>&lt;td width=&quot;50px&quot;&gt;</find>
       <find>height:10px</find>
       <find>height:220px</find>
     </findStrings>
     <replaceStrings>
-      <replace />
+      <replace>&lt;td width=&quot;50px&quot;nowrap=&quot;nowrap&quot;&gt;</replace>
       <replace>height:14px</replace>
       <replace>height:15px</replace>
     </replaceStrings>
@@ -229,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="259" />
     <option name="y" value="159" />
     <option name="width" value="1639" />
@@ -405,7 +400,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17291667" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -802,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controll_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="120" column="31" lean-forward="true" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+        <state relative-caret-position="405">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>

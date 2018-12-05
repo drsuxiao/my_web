@@ -1,5 +1,6 @@
 from app import db
-from datetime import datetime
+from datetime import datetime, date, time
+from flask import json
 
 
 # Create user model.
@@ -62,6 +63,17 @@ class  Finehairrecord(db.Model):
 class Umbilicalbloodrecord(db.Model):
     __tablename__ = 'umbilicalbloodrecord'
     id = db.Column(db.Integer, primary_key=True)
+
+
+class DateEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.__str__()
+        if isinstance(obj, date):
+            return obj.__str__()
+        if isinstance(obj, time):
+            return obj.__str__()
+        return json.JSONEncoder.default(self, obj)
 
 
 class Amnioticrecord(db.Model):
@@ -233,4 +245,10 @@ class Amnioticrecord(db.Model):
     treatment_times = db.Column(db.Integer)  # 治疗次数
     id_number = db.Column(db.String(50))  #身份证号
     id_no = db.Column(db.String(50))  #ID号
+
+    def to_json(self):
+        dict = self.__dict__
+        if "_sa_instance_state" in dict:
+            del dict["_sa_instance_state"]
+        return json.dumps(dict, cls=DateEncoder)
 

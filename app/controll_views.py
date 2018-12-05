@@ -1,12 +1,11 @@
 from flask_admin import expose, AdminIndexView, BaseView
 from flask_admin import Admin, helpers
 from app import app, db, login_manager
-from app.data_models import User, Basefile, Amnioticrecord, Finehairrecord, Umbilicalbloodrecord
+from app.data_models import User, Basefile, Amnioticrecord, Finehairrecord, Umbilicalbloodrecord, DateEncoder
 from flask_login import current_user, login_user, logout_user
 from app.view_forms import LoginForm, RegistrationForm, AmnioticForm, PasswordEditForm
-from flask import render_template, redirect, url_for, request, flash, json
+from flask import render_template, redirect, url_for, request, flash, json, jsonify
 from app.view_models import MyUserView, MyBasefileView, MyAmnioticrecordView, MyBaseView
-from werkzeug.security import generate_password_hash, check_password_hash
 
 
 @login_manager.user_loader
@@ -117,13 +116,10 @@ class MyAppendView(MyBaseView):
         # 获取Get数据
         id = request.args.get('id')
         # 返回
-        data = dict(Amnioticrecord.query.filter(id == id).first())
-        print(json.dumps(data))
-        if data:
-            return json.dumps({'result': 'ok'})
-        else:
-            return json.dumps({'result': 'error'})
+        row = db.session.query(Amnioticrecord).filter(Amnioticrecord.id == id).first()
 
+        print(row.to_json())
+        return row.to_json()
 
 
 #使用自己重写的 Home view 来重置了库中原本提供的Home view
