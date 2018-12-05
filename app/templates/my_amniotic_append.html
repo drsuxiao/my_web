@@ -4,6 +4,8 @@
             {{ form.hidden_tag() if form.hidden_tag }}
       <div style="font-size:14px"><div><a href="java:void(0)" onclick="myFunction()" value="">弹出多选列表</a></div>
         <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0"><tr>
+            <td nowrap="nowrap">ID</td><td>{{form.id(style="height:15px;width:10px")}}</td>
+            <td nowrap="nowrap">病历册</td><td>{{form.records(style="height:15px;width:100px")}}</td>
             <td nowrap="nowrap">ID号</td><td>{{form.id_no(style="height:15px;width:200px")}}</td>
             <td nowrap="nowrap">科室</td><td>{{form.department(style="height:15px;width:150px")}}</td>
             <td nowrap="nowrap">床号</td><td>{{form.bed_no(style="height:15px;width:50px")}}</td>
@@ -49,7 +51,7 @@
         </tr></table></div>
         <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0"><tr>
             <td nowrap="nowrap">双方地贫</td><td>{{form.ifpoverty(style="height:15px;width:30px")}}</td>
-            <td nowrap="nowrap">筛查日期</td><td>{{form.screen_date(style="height:15px;width:150px",type='date')}} &nbsp&nbsp</td>
+            <td nowrap="nowrap">筛查日期</td><td>{{form.screen_date(style="height:15px;width:150px")}} &nbsp&nbsp</td>
             <td nowrap="nowrap">AFP</td><td>{{form.afp_od(style="height:15px;width:30px")}}</td><td>u/ml</td>
             <td>{{form.afp_mo(style="height:15px;width:30px")}}</td><td>Mo &nbsp</td>
             <td nowrap="nowrap">E3</td><td>{{form.e3_nmol_1(style="height:15px;width:30px")}}</td><td>nmol/l</td>
@@ -205,7 +207,7 @@
             <td nowrap="nowrap">医生</td>
             <td>{{form.diagnostic_doctor(style="height:15px;width:100px")}}</td>
             <td nowrap="nowrap">诊断日期</td>
-            <td>{{form.diagnostic_date(style="height:15px;width:125px", type="date")}}</td>
+            <td>{{form.diagnostic_date(style="height:15px;width:125px")}}</td>
         </tr></table></div>
         <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0"><tr>
             <td nowrap="nowrap">体温</td>
@@ -225,7 +227,7 @@
             <td>{{form.operation_pregnancy_day(style="height:15px;width:20px")}}</td>
             <td>天  &nbsp</td>
             <td nowrap="nowrap">拟手术日期</td>
-            <td>{{form.plan_operation_date(style="height:15px;width:165px", type="datetime-local")}}</td>
+            <td>{{form.plan_operation_date(style="height:15px;width:165px")}}</td>
         </tr></table></div>
         <div style="text-align:left"><table border="0" cellspacing="0" cellpadding="0"><tr>
             <td nowrap="nowrap">羊膜腔穿刺术记录: &nbsp&nbsp&nbsp&nbsp</td>
@@ -340,6 +342,7 @@
 <script src="{{url_for('static',filename='js/jquery-3.3.1.js')}}"></script>
 <!--Get请求-->
 <script>
+$(document).ready(function() {
     var data={
         'id':'1',
     }
@@ -352,7 +355,7 @@
             alert(JSON.stringify(data));
             alert(data['test'])
         }
-    });
+    })};
 </script>
 
 {% endblock content %}

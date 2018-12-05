@@ -205,8 +205,8 @@ class AmnioticForm(FlaskForm):
     neonatal_condition = fields.StringField()#db.Column(db.String(50))  # 新生儿情况
     loss_follow_up = fields.StringField()#db.Column(db.String(50))  # 失访
     other_description = fields.StringField()#db.Column(db.String(200))  # 其他描述
-    entry_person = QuerySelectField(label=u'录入人', validators=[validators.required()], query_factory=query_factory_user,
-                                    get_pk=get_pk)# db.Column(db.String(20))  # 录入人
+    entry_person = fields.StringField()
+    #entry_person = QuerySelectField(label=u'录入人', query_factory=query_factory_user, get_pk=get_pk)# db.Column(db.String(20))  # 录入人
     modifier = fields.StringField()#db.Column(db.String(20))  # 修改人
     printing_times = fields.IntegerField()#db.Column(db.Integer) #打印次数
     sending_person = fields.StringField()#db.Column(db.String(10))  # 送检人

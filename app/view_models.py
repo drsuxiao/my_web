@@ -129,8 +129,7 @@ class MyBasefileView(BaseModelView):
 
 def get_field_name_list():
     collist = []
-    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01',
-                                             Basefile.field_name != 'id').order_by(Basefile.colid).all()
+    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01').order_by(Basefile.colid).all()
     for row in rows:
         collist.append(row.field_name)
     return collist
@@ -138,8 +137,7 @@ def get_field_name_list():
 
 def get_basefile_name_list():
     collist = []
-    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01',
-                                             Basefile.field_name != 'id').order_by(Basefile.colid).all()
+    rows = db.session.query(Basefile).filter(Basefile.type_name == '羊水', Basefile.plan_code == '01').order_by(Basefile.colid).all()
     for row in rows:
         collist.append(row.basefile_name)
     return collist
@@ -168,8 +166,8 @@ class MyAmnioticrecordView(BaseModelView):
     #edit_template = 'my_amniotic_create.html'
     column_list = get_field_name_list()
     column_labels = get_label_dict()
-    column_searchable_list = column_list
-    column_editable_list = column_list
-    column_searchable_list = column_list
-    column_filters = column_searchable_list
+    #column_searchable_list = column_list
+    #column_editable_list = column_list
+    #column_searchable_list = column_list
+    #column_filters = column_searchable_list
     # form = IDBrandForm

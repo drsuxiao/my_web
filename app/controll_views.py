@@ -101,14 +101,24 @@ class MyAdminIndexView(AdminIndexView):
 
 class MyAppendView(MyBaseView):
 
-    @expose('/', methods=['GET', 'POST'])
+    @expose('/', methods=['GET'])
     def index(self):
         form = AmnioticForm()
+        #data = db.session.query(Amnioticrecord).filter(Amnioticrecord.id == id).first().to_json()
         return self.render('my_amniotic_append.html', form=form)
 
     @expose('/new/', methods=['GET', 'POST'])
     def amniotic_new(self):
-        form = AmnioticForm()
+        print(request.method)
+        form = AmnioticForm(request.form)
+        print(form.data)
+        if request.method == 'POST':
+            print('enter')
+            amuiotic = Amnioticrecord()
+            form.populate_obj(amuiotic)
+            db.session.add(amuiotic)
+            db.session.commit()
+            return redirect(url_for('.index'))
         return self.render('my_amniotic_append.html', form=form)
 
     @expose('/test_get/', methods=['POST', 'GET'])
