@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Combo - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/easyui.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/demo.css')}}">
+    <script type="text/javascript" src="{{url_for('static',filename='/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/jquery.easyui.min.js')}}"></script>
+</head>
+<body>
+    <select id="cc" style="width:150px"></select>
+    <div id="sp">
+        <div style="color:#99BBE8;background:#fafafa;padding:5px;">请选择渠道</div>
+        <div style="padding:5px">
+            <input type="checkbox" name="lang" value="01"><span>天天挖坑</span><br />
+            <input type="checkbox" name="lang" value="02"><span>爱游戏</span><br />
+            <input type="checkbox" name="lang" value="03"><span>沃商店</span><br />
+            <input type="checkbox" name="lang" value="04"><span>咪咕</span>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var s = ",";//设定分隔付
+            $('#cc').combo({
+                required: true,//是否验证
+                editable: true,//是否可编辑
+                multiple: true//可否支持多选
+            });
+            $('#sp').appendTo($('#cc').combo('panel'));
+            $('#sp input').click(function () {
+                var v = $(this).next('span').text();
+                if ("," == s||""==s) {//第一次勾选时起作用
+                    s = $(this).next('span').text();
+                }
+                else if (-1 < s.indexOf(v)) {//当去掉勾选时起作用  Indexof:返回某个指定的字符串值在字符串中首次出现的位置
+                    var n = s.indexOf(v);
+                    var m = s.indexOf(v) + v.length;
+                    if (0 == s.indexOf(v)) {//取消第一个点击的勾选
+                        s = s.substring(n + v.length + 1, s.length);
+                    } else if (0 < s.indexOf(v) && ((s.indexOf(v) + v.length) < s.length)) {//取消非第一个和最后一个的勾选
+                        s = s.substring(0, n) + s.substring(n + v.length + 1, s.length);
+                    } else {//取消最后一个的勾选
+                        s = s.substring(0, n - 1);
+                    }
+                }
+                else {
+                    s = s + "," + $(this).next('span').text();//将勾选各值拼接
+
+                }
+                $('#cc').combo('setValue', s).combo('setText', s).combo('showPanel');//将值赋值给文本框并在文本里显示出来
+            });
+        });
+    </script>
+</body>
+</html>

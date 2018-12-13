@@ -6,6 +6,7 @@ from flask_login import current_user, login_user, logout_user
 from app.view_forms import LoginForm, RegistrationForm, AmnioticForm, PasswordEditForm
 from flask import render_template, redirect, url_for, request, flash, json, jsonify
 from app.view_models import MyUserView, MyBasefileView, MyAmnioticrecordView, MyBaseView
+from sqlalchemy import desc
 
 
 @login_manager.user_loader
@@ -112,9 +113,25 @@ class MyAppendView(MyBaseView):
         print(request.method)
         form = AmnioticForm(request.form)
         print(form.data)
-        if request.method == 'POST':
-            print('enter')
+        if request.method == 'POST' and form.validate_on_submit():
             amuiotic = Amnioticrecord()
+            row = db.session.query(Amnioticrecord.id).order_by(desc(Amnioticrecord.id)).first()
+            form.id.data = int(row.id) + 1
+            form.populate_obj(amuiotic)
+            db.session.add(amuiotic)
+            db.session.commit()
+            return redirect(url_for('.index'))
+        return self.render('my_amniotic_append.html', form=form)
+
+    @expose('/edit/', methods=['GET', 'POST'])
+    def amniotic_edit(self):
+        print(request.method)
+        form = AmnioticForm(request.form)
+        print(form.data)
+        if request.method == 'POST' and form.validate_on_submit():
+            amuiotic = Amnioticrecord()
+            row = db.session.query(Amnioticrecord.id).order_by(desc(Amnioticrecord.id)).first()
+            form.id.data = int(row.id) + 1
             form.populate_obj(amuiotic)
             db.session.add(amuiotic)
             db.session.commit()

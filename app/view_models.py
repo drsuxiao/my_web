@@ -163,7 +163,7 @@ class MyAmnioticrecordView(BaseModelView):
     can_delete = True
     can_export = True  # 可以创建数据  False
     create_template = 'my_amniotic_create.html'
-    #edit_template = 'my_amniotic_create.html'
+    edit_template = 'my_amniotic_edit.html'
     column_list = get_field_name_list()
     column_labels = get_label_dict()
     #column_searchable_list = column_list
@@ -171,3 +171,6 @@ class MyAmnioticrecordView(BaseModelView):
     #column_searchable_list = column_list
     #column_filters = column_searchable_list
     # form = IDBrandForm
+    form_widget_args = {'referral_hospital': {'readonly': True}}
+    #form_args = {'referral_hospital': {'': {"": "multiple"}}}
+    #form_choices = {'referral_hospital': [(n.username, n.username) for n in User.query.all()]}
