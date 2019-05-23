@@ -11,3 +11,5 @@ BABEL_DEFAULT_LOCALE = 'zh_CN'
 
 CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
+
+FLASK_ADMIN_FLUID_LAYOUT = True

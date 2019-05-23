@@ -117,7 +117,7 @@ class AmnioticForm(FlaskForm):
     husband_rh = fields.StringField()#db.Column(db.String(20))
     husband_hb_elect_a2 = fields.StringField()#db.Column(db.Float)
     husband_hb_elect_other = fields.StringField()#db.Column(db.String(20))
-    b_check_date = fields.StringField()#db.Column(db.Date)   # B超日期
+    b_check_date = fields.DateTimeField()#db.Column(db.Date)   # B超日期
     b_check_hospital = fields.StringField()#db.Column(db.String(60))
     menolipsis_week = fields.StringField()#db.Column(db.Integer)  # 停经_周
     menolipsis_day = fields.StringField()#db.Column(db.Integer)  # 停经_天

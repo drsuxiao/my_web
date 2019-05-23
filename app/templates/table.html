@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 实例 - 默认的导航栏</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-*.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+</head>
+<body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="<%=path %>/images/a.jpg" height="100%" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a class="icon-bar" href="#">网站设置</a>
+                        </li>
+                        <li><a href="#">分类管理</a>
+                        </li>
+                        <li><a href="#">城市管理</a>
+                        </li>
+                        <li><a href="#">商品管理</a>
+                        </li>
+                        <li><a href="#">订单管理</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>欢迎您,admin</a>
+                        </li>
+                        <li><a href="#">安全退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-home"></span>商品管理
+                    </a>
+                    <a href="#" class="list-group-item">
+                    <!-- 小图标样式设置 -->
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        VIP客户查询
+                        <span class="glyphicon glyphicon-search" aria-hidden="true" style="float: right;"></span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-align-left" aria-hidden="true">
+                    </span>VIP客户录入</a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-camera" aria-hidden="true">
+                    </span>VIP客户消费</a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true">
+                    </span>VIP客户增加</a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true">
+                    </span>VIP客户删除</a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true">
+                    </span>VIP客户注销</a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true">
+                    </span>个人设置</a>
+                </div>
+                <!--左边菜单栏-->
+                <div class="col-sm-10">
+                    <ol class="breadcrumb">
+                        <li class="active">菜单
+                        </li>
+                        <li class="active">vip客户信息
+                        </li>
+                    </ol>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            搜索
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" class="form-inline">
+                                <div class="form-group">
+                                    <label for="name">名称</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">状态</label>
+                                    <select class="form-control">
+                                        <option>已解决</option>
+                                        <option>已处理未解决</option>
+                                        <option>未处理</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">开始搜索</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--
+                        列表展示
+                    -->
+                    <div class="table-responsive">
+                        <!--bootstrap-table表格-->
+                        <table id="bootstrapTable"></table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- 底部页脚部分 -->
+ <div class="footer">
+     <p class="text-center">
+         2019 © 网络信息科.
+     </p>
+ </div>
+
+
+        <script type="text/javascript">
+        //没有请求,自己写50条数据
+        var datas  = [];
+        for(var i=0;i<50;i++){
+            datas[i]={"name":i+"号","age":i+"岁"}
+        }
+            $('#data-table').bootstrapTable({
+                pagination: true,
+                pageSize: 5,
+                pageNumber:1,
+                sidePagination:'client',
+                paginationFirstText: "首页",
+                paginationPreText: "上一页",
+                paginationNextText: "下一页",
+                paginationLastText: "末页",
+                iconSize: 'pager',
+                columns: [{field:"state",checkbox: true,align:"center",valign:"middle"},
+                {field:"name",title:"编号",align:"center",valign:"middle",sortable:"true"},
+                {field:"age",title:"年龄",align:"center",valign:"middle",sortable:"true"}],
+                data:datas,
+            });
+        </script>
+    </body>
+<script type="text/javascript">
+$(function(){
+    initTable();
+});
+function initTable() {
+    //先销毁表格
+    $("#bootstrapTable").bootstrapTable({
+        //表格高度
+        height: getHeight()-300,
+        //服务器数据的请求方式 'get' 或 'post'。
+        method: 'get',
+        //设置为 true 会有隔行变色效果
+        striped: true,
+        //设置为 true 会在表格底部显示分页条。
+        pagination: true,
+        //请求后台的URL
+        url: '/MsgDealCenterAction/listData',
+        //服务器返回的数据类型。
+        dataType: 'json',
+        //工具按钮用哪个容器
+        toolbar: '#toolbar',
+        //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性
+        cache: false,
+        //设置为 true 启用分页条无限循环的功能
+//         paginationLoop: true,
+        //设置在哪里进行分页，可选值为 'client' 或者 'server'。设置 'server'时，必须设置服务器数据地址（url）或者重写ajax方法
+        sidePagination: 'server',
+        //初始化加载第一页，默认第一页
+        pageNumber: 1,
+        //每页的记录行数
+        pageSize: 10,
+        //可供选择的每页的行数
+        pageList: [10,15,20, 50, 100],
+        //设置为false 将禁止所有列的排序。
+        sortable: true,
+        //设置默认排序为 name
+        sortName: 'insert_time',
+        //定义排序方式，'asc' 或者 'desc'。
+        sortOrder: "desc",
+        //是否显示刷新按钮
+        showRefresh: true,
+        //是否显示内容列下拉框。
+        showColumns: true,
+        //显示导出插件
+        showExport: true,
+        //是否显示右上角的搜索框
+        search: true,
+        //是否显示切换视图（table/card）按钮。
+        showToggle:false,
+        //是否启用点击选中行
+//         clickToSelect: true,
+        //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
+        //设置为limit可以获取limit, offset, search, sort, order
+        queryParamsType:'undefined',
+        //请求服务器数据
+        queryParams: function queryParams(params){
+            var param = {
+                 pageNumber: params.pageNumber,
+                 pageSize: params.pageSize,
+                 sortName: params.sortName,
+                 sortOrder: params.sortOrder
+             };
+             return param;
+        },
+        //加载成功时执行
+        onLoadSuccess: function(data){
+            console.log("加载成功");
+        },
+        //加载失败时执行
+        onLoadError: function(status){
+            console.log("加载数据失败"+status);
+        },
+        columns: [
+        {
+           title: "全选",
+           field: "select",
+           checkbox: false,
+           width: 20,//宽度
+           align: "left",//水平
+           valign: "middle",
+           formatter: function (value, row, index) {
+                return row._id;
+           }
+        },{
+            title: '编号',//标题  可不加
+            align: 'center',
+            valign: 'middle',
+            sortable: false,
+            formatter: function (value, row, index) {
+                return index+1;
+            }
+        },{
+            field: 'source',
+            title: '产品线',
+            align: 'center',
+            valign: 'middle',
+            sortable: false,
+            width:  '80px'
+        },{
+            field: 'msg_type',
+            title: '消息类型',
+            align: 'center',
+            valign: 'middle',
+            sortable: false
+        },{
+            field: 'account_name',
+            title: '账号类型',
+            align: 'center',
+            valign: 'middle',
+            sortable: false
+        },{
+            field: 'msg_name',
+            title: '消息名称',
+            align: 'left',
+            valign: 'middle',
+            sortable: false
+        },{
+            field: 'msg',
+            title: '消息内容',
+            align: 'left',
+            valign: 'middle',
+            sortable: false,
+            visible: false,
+            //value【字段值】row【row对应的整条记录】index【行索引】
+            formatter: function format(value,row,index){
+                console.log(typeof(value))
+                // 缩进一个2个空格
+                  return JSON.stringify(value, null, 2);
+            }
+        },{
+            field: 'msg_start_time',
+            title: '起始有效时间',
+            align: 'center',
+            valign: 'middle',
+            sortable: true
+        },{
+            field: 'msg_end_time',
+            title: '结束有效时间',
+            align: 'center',
+            valign: 'middle',
+            sortable: true
+        },{
+            field: 'insert_time',
+            title: '入库时间',
+            align: 'center',
+            valign: 'middle',
+            sortable: true
+        },{
+            field: 'update_time',
+            title: '更新时间',
+            align: 'center',
+            valign: 'middle',
+            sortable: true,
+            visible: false
+        }]
+    });
+}
+//获取table的高度
+function getHeight() {
+    return $(window).height() - 100;
+}
+</script>
+
+</html>

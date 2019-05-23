@@ -143,7 +143,7 @@ class MyAppendView(MyBaseView):
         # 获取Get数据
         id = request.args.get('id')
         # 返回
-        row = db.session.query(Amnioticrecord).filter(Amnioticrecord.id == id).first()
+        row = db.session.query(User).first()
 
         print(row.to_json())
         return row.to_json()
@@ -161,11 +161,11 @@ admin = Admin(app, name=u'病历管理系统', index_view=MyAdminIndexView(), ba
 admin.add_view(MyUserView(User, db.session, name=u'用户管理', category='系统'))
 admin.add_view(MyBasefileView(Basefile, db.session, name='基础档案表设置', category='系统'))
 
-admin.add_view(MyAppendView(name=u'羊水录入', endpoint='amniotic', category='病历数据录入'))
-admin.add_view(MyAppendView(name=u'绒毛录入', endpoint='fluff', category='病历数据录入'))
-admin.add_view(MyAppendView(name=u'脐血录入', endpoint='cordblood', category='病历数据录入'))
+#admin.add_view(MyAppendView(name=u'羊水录入', endpoint='amniotic', category='病历数据录入'))
+#admin.add_view(MyAppendView(name=u'绒毛录入', endpoint='fluff', category='病历数据录入'))
+#admin.add_view(MyAppendView(name=u'脐血录入', endpoint='cordblood', category='病历数据录入'))
 
-admin.add_view(MyAmnioticrecordView(Amnioticrecord, db.session, name='羊水病历', category='病历数据查询'))
+admin.add_view(MyAmnioticrecordView(Amnioticrecord, db.session, name='羊水病历', category='病历数据'))
 #admin.add_view(MyAmnioticrecordView(Finehairrecord, db.session, name='绒毛病历', category='病历数据查询'))
 #admin.add_view(MyAmnioticrecordView(Umbilicalbloodrecord, db.session, name='脐血病历', category='病历数据查询'))
 

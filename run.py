@@ -12,4 +12,4 @@ db.session.commit()
 '''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="138.62.99.248", port=5050, debug=True)
